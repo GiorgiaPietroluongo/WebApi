@@ -1,66 +1,92 @@
 package senac.java.Views;
-
-import senac.java.Domain.Stores;
+import senac.java.Domain.Products;
+import senac.java.Domain.Salesperson;
 import senac.java.Domain.Users;
-
 import java.util.Scanner;
 
-
-
-public class Interface {
-    static Scanner sc = new Scanner(System.in);
-    static Users nome = new Users();
-    static Users sobrenome = new Users();
-    static  Users idade = new Users();
-    static Users  endereco = new Users();
-    static  Users emaill = new Users();
-    static Users pasword = new Users();
-    static Users cpff = new Users();
-
-
-    static Stores pnome = new Stores();
-    static Stores preco = new Stores();
-    static Stores cor = new Stores();
-    static Stores descricao = new Stores ();
-
-
-    public static void main(String[] args){
-
-        System.out.println("Bem-vindo a tela inicial!");
-        System.out.println();
-
-        System.out.println("Digite o seu nome: ");
-        nome.name = sc.nextLine();
-
-        System.out.println("Digite o seu sobrenome: ");
-        sobrenome.lastName = sc.nextLine();
-
-        System.out.println("Digite a sua idade: ");
-        idade.age = sc.nextByte();
-
-        System.out.println("Digite o seu endereço: ");
-        endereco.address = sc.nextLine();
-
-        System.out.println("Digite o seu e-mail: ");
-        emaill.email = sc.nextLine();
-
-        System.out.println("Digite a sua senha: ");
-        pasword.password = sc.nextLine();
-
-        System.out.println("Digite o seu CPF: ");
-        cpff.cpf = sc.nextLine();
+public class TelaCadastro {
+    Telas telas = new Telas();
 
 
 
 
+        public static void cadastrarVendedor(){
+             Scanner scanner = new Scanner(System.in);
+             Telas telas = new Telas();
+            System.out.println("Cadastro de Vendedores ");
+            Salesperson person = new Salesperson();
 
+            System.out.print("Nome: ");
+            person.name = scanner.nextLine();
 
+            System.out.print("Sobrenome: ");
+            person.lastName = scanner.nextLine();
 
+            System.out.println("Numero: ");
+            person.phoneNumber = Integer.parseInt(scanner.nextLine());
 
+            System.out.println("CPF: ");
+            person.cpf = scanner.nextLine();
 
+            System.out.println("E-mail: ");
+            person.email = scanner.nextLine();
 
+            System.out.println("Endereço: ");
+            person.address = scanner.nextLine();
 
+            telas.Imprimir("Vendedor");
+        }
+        public static void cadastroCliente(){
+            System.out.println("Cadastro de Clientes ");
+            Users users = new Users();
+            Scanner scanner = new Scanner(System.in);
+            Telas telas = new Telas();
 
+            System.out.print("Nome: ");
+            users.name = scanner.nextLine();
 
-    }
+            System.out.print("Sobrenome: ");
+            users.lastName = scanner.nextLine();
+
+            System.out.print("Telefone: ");
+            users.phoneNumber = Integer.parseInt(scanner.nextLine());
+
+            System.out.print("idade: ");
+            users.age = Integer.parseInt(scanner.nextLine());
+
+            System.out.print("CPF: ");
+            users.cpf = Integer.parseInt(scanner.nextLine());
+
+            System.out.print("Emai-l: ");
+            users.email = scanner.nextLine();
+
+            System.out.print("Endereço: ");
+            users.address = scanner.nextLine();
+            telas.Imprimir("Cliente");
+
+        }
+        public static void cadastrarProduto(){
+            System.out.println("Cadastro de Produtos ");
+            Products products = new Products();
+            Scanner scanner = new Scanner(System.in);
+            Telas telas = new Telas();
+
+            System.out.print("Nome: ");
+            products.pName = scanner.nextLine();
+
+            System.out.print("...: ");
+            products.pPrice = scanner.nextLine();
+
+            System.out.print("Cor: ");
+            products.pColor = scanner.nextLine();
+
+            System.out.print("Descrição: ");
+            products.PDescription = scanner.nextLine();
+
+            System.out.print("Quantidade: ");
+            products.pQuantity = Integer.parseInt(scanner.nextLine());
+//        products.img
+
+//            telas.Imprimir(3);
+        }
 }
